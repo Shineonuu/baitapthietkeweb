@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OH Decor - Nội thất cao cấp</title>
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #344943;
+            box-shadow: none;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .top-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            max-width: 150px;
+        }
+
+        .top-header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            padding: 8px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            width: 250px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .user-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .user-actions a {
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .user-actions i {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 15px 5%;
+        }
+
+        .main-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            justify-content: center;
+        }
+
+        .main-menu a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .main-menu a:hover {
+            color: #d4a762;
+        }
+
+        .main-menu a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #d4a762;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        .main-menu a:hover:after {
+            width: 100%;
+        }
+
+        
+             footer {
+            background: #222;
+            color: #fff;
+            padding: 60px 5% 30px;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-widget h3 {
+            font-size: 22px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-widget h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background: #d4a762;
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-widget p {
+            margin-bottom: 15px;
+            color: #bbb;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #d4a762;
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-info i {
+            width: 25px;
+            margin-right: 10px;
+            color: #d4a762;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: #333;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #d4a762;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+            color: #bbb;
+            font-size: 14px;
+        }
+        </style>
+    </head>
+    
+   
+
+<body>
+    <header>
+        <div class="top-header">
+            <div class="logo">
+           
+            </div>
+            <div class="top-header-right">
+                <div class="search-box">
+                    <input type="text" placeholder="Tìm kiếm sản phẩm...">
+                    <button class="search-btn">🔍</button>
+                </div>
+                <div class="user-actions">
+                    <a href="#">
+                        <span>👤</span>
+                        <span>Tài khoản</span>
+                    </a>
+                    <a href="#">
+                        <span>❤️</span>
+                        <span>Yêu thích</span>
+                    </a>
+                    <a href="#">
+                        <span>🛒</span>
+                        <span>Giỏ hàng (0)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <ul class="main-menu">
+                <li><a href="../noithat.html">Trang chủ</a></li>
+                <li><a href="phangioithieu.html">Về chúng tôi</a></li>
+                <li><a href="../sanpham/sanpham.html">Sản phẩm</a></li>
+                <li><a href="../phongkhach/phongkhach.html">Phòng khách</a></li>
+                <li><a href="../phongngu/phongngu.html">Phòng ngủ</a></li>
+                <li><a href="../phongan/phongan.html">Phòng ăn</a></li>
+                <li><a href="../tintuc/tintuc.html">Tin tức</a></li>
+                <li><a href="../lienhe/lienhe.html">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="company-intro">
+        <div class="container">
+          <h2>Giới thiệu</h2>
+          <p>
+            Mẫu theme OH! Decor của OH!Team là giải pháp lý tưởng cho các cửa hàng
+            kinh doanh sản phẩm decor, phong thủy, nội, ngoại thất và trang trí nhà
+            cửa. Mẫu theme OH!DECOR
+            
+          </p>
+          <h2>Giới thiệu</h2>
+          <p>
+            Mẫu theme OH! Decor của OH!Team là giải pháp lý tưởng cho các cửa hàng
+            kinh doanh sản phẩm decor, phong thủy, nội, ngoại thất và trang trí nhà
+            cửa. 
+          </p>
+          <h3>Tạo Dấu Ấn Với Thiết Kế Đẹp Mắt</h3>
+          <p>
+            OH! Decor mang đến một diện mạo mới cho các sản phẩm decor. Mỗi chi tiết
+            trên theme đều được chăm chút tỉ mỉ, từ màu sắc, bố cục đến hình ảnh sản
+            phẩm, nhằm tạo ra một giao diện hợp lý, sinh động.
+          </p>
+          <h3>Cải Thiện Trải Nghiệm Mua Sắm</h3>
+          <p>
+            Chúng tôi hiểu rằng một trải nghiệm mua sắm mượt mà có thể khiến khách
+            hàng quay trở lại mua sắm nhiều lần. Do đó, OH! Decor được tối ưu hóa để
+            đảm bảo quá trình tìm kiếm, so sánh và mua hàng của khách hàng diễn ra
+            nhanh chóng và thuận tiện, với một hệ thống phân loại sản phẩm thông minh
+            và quy trình thanh toán đơn giản.
+          </p>
+          <h3>Hỗ Trợ Quảng Cáo và SEO</h3>
+          <p>
+            Mẫu website OH! Decor được tối ưu SEO ngay từ bản thiết kế cơ bản, giúp
+            nâng cao khả năng xuất hiện trên các công cụ tìm kiếm và thu hút khách
+            hàng tiềm năng. Cùng với đó, việc tích hợp các công cụ quảng cáo giúp bạn
+            mở rộng sự hiện diện trực tuyến, đạt được hiệu quả quảng cáo tốt nhất.
+          </p>
+          <h3>Ưu Điểm Khi Sử Dụng OH! Decor:</h3>
+          <ul>
+            <li>
+              <strong>Thiết Kế Decor Hợp Lý:</strong> Mẫu website phản ánh sự hiểu
+              biết sâu sắc về phong thủy, thu hút khách hàng quan tâm đến nghệ thuật
+              này.
+            </li>
+            <li>
+              <strong>Dễ Dàng Quản Lý Sản Phẩm:</strong> Tính năng quản lý sản phẩm
+              linh hoạt, cho phép cập nhật và điều chỉnh thông tin sản phẩm dễ dàng.
+            </li>
+            <li>
+              <strong>Tối Ưu Hóa Mọi Thiết Bị:</strong> Tương thích với mọi loại
+              thiết bị, đảm bảo khách hàng có thể truy cập mọi lúc, mọi nơi.
+            </li>
+          </ul>
+          <h3>Vì sao cần thiết kế website chuyên nghiệp?</h3>
+          <p>
+            Trước khi tìm hiểu sâu về việc thiết kế website, doanh nghiệp cần hiểu
+            tầm quan trọng của nó. Sở hữu một kênh mua sắm sẽ mang lại cho công ty
+            nhiều lợi ích.
+          </p>
+          <ul>
+            <li>
+              <strong>Hỗ trợ đo lường hiệu quả việc kinh doanh:</strong> Website tích
+              hợp nhiều tính năng hỗ trợ bán hàng, mang lại khả năng thống kê lượt truy
+              cập, đơn hàng, các sản phẩm được tìm kiếm nhiều,...
+            </li>
+            <li>
+              <strong>Tiết kiệm chi phí đầu tư so với hình thức kinh doanh truyền
+              thống:</strong> Kinh doanh truyền thống yêu cầu nhiều vốn cho các
+              khoản: thuê mặt bằng, điện, nước, sửa chữa mặt bằng,... Với kinh doanh
+              online, chỉ cần bỏ ra chi phí thiết kế, bảo trì web là đủ.
+            </li>
+            <li>
+              <strong>Tiếp cận khách hàng ở bất cứ khu vực địa lý nào:</strong>
+              Website cho phép tiếp cận với khách hàng ở nhiều nơi chỉ với một chiếc
+              điện thoại thông minh hoặc máy tính, laptop có kết nối Internet.
+            </li>
+            <li>
+              <strong>Hoạt động không giới hạn thời gian:</strong> Website là công
+              cụ để giới thiệu sản phẩm, bán hàng, giải đáp các câu hỏi, tư vấn cho
+              khách hàng,... mọi lúc mọi nơi, không bị giới hạn thời gian như cửa
+              hàng thông thường.
+            </li>
+            <li>
+              <strong>Bắt kịp xu hướng tiêu dùng:</strong> Người tiêu dùng hiện có
+              xu hướng mua hàng qua mạng thay vì đến cửa hàng, đặc biệt là những
+              người bận rộn. Thiết kế web thể hiện sự chuyên nghiệp và khả năng bắt
+              kịp xu thế thời đại.
+            </li>
+          </ul>
+        </div>
+      </div>
+</body>
+
+<style>
+    .company-intro {
+  padding: 40px 0;
+  background-color: #f9f9f9; /* Màu nền xám nhạt */
+}
+
+.company-intro .container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.company-intro h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.company-intro h3 {
+  margin-top: 25px;
+  color: #555;
+}
+
+.company-intro p {
+  line-height: 1.6;
+  color: #666;
+}
+
+.company-intro ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.company-intro li {
+  margin-bottom: 10px;
+}
+
+/* Responsive design (tùy chỉnh theo nhu cầu) */
+@media (max-width: 768px) {
+  .company-intro .container {
+    width: 90%;
+  }
+}
+</style>
+<footer>
+    <div class="footer-top">
+        <div class="footer-widget">
+            <h3>Về OH Decor</h3>
+            <p>OH Decor - Thương hiệu nội thất cao cấp hàng đầu với thiết kế độc đáo, chất lượng vượt trội, mang đến không gian sống hoàn hảo cho mọi gia đình.</p>
+            <div class="social-links">
+                <a href="#">F</a>
+                <a href="#">I</a>
+                <a href="#">Y</a>
+                <a href="#">P</a>
+            </div>
+        </div>
+        <div class="footer-widget">
+            <h3>Liên kết nhanh</h3>
+            <ul class="footer-links">
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Về chúng tôi</a></li>
+                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Liên hệ</a></li>
+                <li><a href="#">Chính sách bảo mật</a></li>
+            </ul>
+        </div>
+        <div class="footer-widget">
+            <h3>Danh mục sản phẩm</h3>
+            <ul class="footer-links">
+                <li><a href="#">Phòng khách</a></li>
+                <li><a href="#">Phòng ngủ</a></li>
+                <li><a href="#">Phòng ăn</a></li>
+                <li><a href="#">Văn phòng</a></li>
+                <li><a href="#">Đồ trang trí</a></li>
+                <li><a href="#">Sản phẩm mới</a></li>
+            </ul>
+        </div>
+        <div class="footer-widget">
+            <h3>Thông tin liên hệ</h3>
+            <div class="contact-info">
+                <span>📍</span>
+                <p>123 Nguyễn Trãi, Quận 1, TP. Hồ Chí Minh</p>
+            </div>
+            <div class="contact-info">
+                <span>📞</span>
+                <p>0123 456 789</p>
+            </div>
+            <div class="contact-info">
+                <span>✉️</span>
+                <p>info@ohdecor.vn</p>
+            </div>
+            <div class="contact-info">
+                <span>🕒</span>
+                <p>Thứ 2 - Chủ nhật: 8:00 - 20:00</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>©
+</html>

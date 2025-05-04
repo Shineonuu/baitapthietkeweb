@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OH Decor - Nội thất cao cấp</title>
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #344943;
+            box-shadow: none;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .top-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            max-width: 150px;
+        }
+
+        .top-header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            padding: 8px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            width: 250px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .user-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .user-actions a {
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .user-actions i {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 15px 5%;
+        }
+
+        .main-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            justify-content: center;
+        }
+
+        .main-menu a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .main-menu a:hover {
+            color: #d4a762;
+        }
+
+        .main-menu a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #d4a762;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        .main-menu a:hover:after {
+            width: 100%;
+        }
+
+        
+             footer {
+            background: #222;
+            color: #fff;
+            padding: 60px 5% 30px;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-widget h3 {
+            font-size: 22px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-widget h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background: #d4a762;
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-widget p {
+            margin-bottom: 15px;
+            color: #bbb;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #d4a762;
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-info i {
+            width: 25px;
+            margin-right: 10px;
+            color: #d4a762;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: #333;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #d4a762;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+            color: #bbb;
+            font-size: 14px;
+        }
+        </style>
+    </head>
+
+<body>
+    <header>
+        <div class="top-header">
+            <div class="logo">
+           
+            </div>
+            <div class="top-header-right">
+                <div class="search-box">
+                    <input type="text" placeholder="Tìm kiếm sản phẩm...">
+                    <button class="search-btn">🔍</button>
+                </div>
+                <div class="user-actions">
+                    <a href="#">
+                        <span>👤</span>
+                        <span>Tài khoản</span>
+                    </a>
+                    <a href="#">
+                        <span>❤️</span>
+                        <span>Yêu thích</span>
+                    </a>
+                    <a href="#">
+                        <span>🛒</span>
+                        <span>Giỏ hàng (0)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <ul class="main-menu">
+                <li><a href="../noithat.html">Trang chủ</a></li>
+                <li><a href="../vechungtoi/phangioithieu.html">Về chúng tôi</a></li>
+                <li><a href="../sanpham/sanpham.html">Sản phẩm</a></li>
+                <li><a href="../phongkhach/phongkhach.html">Phòng khách</a></li>
+                <li><a href="../phongngu/phongngu.html">Phòng ngủ</a></li>
+                <li><a href="../phongan/phongan.html">Phòng ăn</a></li>
+                <li><a href="../tintuc/tintuc.html">Tin tức</a></li>
+                <li><a href="lienhe.html">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f9f9f9;
+        }
+        
+        .container {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 40px;
+          max-width: 1200px;
+          margin: 0 auto;
+          gap: 30px;
+        }
+        .contact-info, .contact-form {
+          flex: 1 1 45%;
+          background-color: #fff;
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h2 {
+          margin-top: 0;
+          color: #333;
+        }
+        .contact-info p {
+          margin: 10px 0;
+        }
+        form input, form textarea {
+          width: 100%;
+          padding: 12px;
+          margin-bottom: 15px;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+        }
+        form button {
+          background-color: #000;
+          color: #fff;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 6px;
+          cursor: pointer;
+        }
+        form button:hover {
+          background-color: #444;
+        }
+        .map {
+          width: 100%;
+          height: 300px;
+          border-radius: 10px;
+          margin-top: 20px;
+        }
+      </style>
+    </head>
+    <body>
+    
+        <p>
+            Mẫu theme OH! Decor của OH!Team là giải pháp lý tưởng cho các cửa hàng
+            kinh doanh sản phẩm decor, phong thủy, nội, ngoại thất và trang trí nhà
+            cửa. Mẫu theme OH!DECOR
+            
+          </p><p>
+            Mẫu theme OH! Decor của OH!Team là giải pháp lý tưởng cho các cửa hàng
+            kinh doanh sản phẩm decor, phong thủy, nội, ngoại thất và trang trí nhà
+            cửa. Mẫu theme OH!DECOR
+            
+          </p><p>
+            Mẫu theme OH! Decor của OH!Team là giải pháp lý tưởng cho các cửa hàng
+            kinh doanh sản phẩm decor, phong thủy, nội, ngoại thất và trang trí nhà
+            cửa. Mẫu theme OH!DECOR
+            
+          </p><p>
+            Mẫu theme OH! Decor của OH!Team là giải pháp lý tưởng cho các cửa hàng
+            kinh doanh sản phẩm decor, phong thủy, nội, ngoại thất và trang trí nhà
+            cửa. Mẫu theme OH!DECOR
+            
+          </p><p>
+            Mẫu theme OH! Decor của OH!Team là giải pháp lý tưởng cho các cửa hàng
+            kinh doanh sản phẩm decor, phong thủy, nội, ngoại thất và trang trí nhà
+            cửa. Mẫu theme OH!DECOR
+            
+          </p>
+    <div class="container">
+      <div class="contact-info">
+        <h2>Thông Tin Liên Hệ</h2>
+        <p><strong>Địa chỉ:</strong> 123 Đường Nội Thất, Quận 1, TP.HCM</p>
+        <p><strong>Email:</strong> contact@ohdecor.vn</p>
+        <p><strong>Hotline:</strong> 1900 1234</p>
+        
+        <iframe class="map" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.2037781863544!2d106.70042461480178!3d10.79305426197357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528dcdc77db1f%3A0x7c6604cdb45f684c!2zMTAwIFTDuWkgVGjhuqFuaCBUcnVuZywgUGjGsOG7nW5nIDEyLCBRdeG6o25nIDEsIEjDoCBO4buZaSwgVMOibiBCw6xuaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1618915443445!5m2!1svi!2s" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+    
+      <div class="contact-form">
+        <h2>Gửi Tin Nhắn</h2>
+        <form action="#" method="post">
+          <input type="text" name="name" placeholder="Họ tên của bạn" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <textarea name="message" rows="6" placeholder="Nội dung tin nhắn" required></textarea>
+          <button type="submit">Gửi</button>
+        </form>
+      </div>
+    </div>
+    
+    </body>
+<footer>
+    <div class="footer-top">
+        <div class="footer-widget">
+            <h3>Về OH Decor</h3>
+            <p>OH Decor - Thương hiệu nội thất cao cấp hàng đầu với thiết kế độc đáo, chất lượng vượt trội, mang đến không gian sống hoàn hảo cho mọi gia đình.</p>
+            <div class="social-links">
+                <a href="#">F</a>
+                <a href="#">I</a>
+                <a href="#">Y</a>
+                <a href="#">P</a>
+            </div>
+        </div>
+        <div class="footer-widget">
+            <h3>Liên kết nhanh</h3>
+            <ul class="footer-links">
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Về chúng tôi</a></li>
+                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Liên hệ</a></li>
+                <li><a href="#">Chính sách bảo mật</a></li>
+            </ul>
+        </div>
+        <div class="footer-widget">
+            <h3>Danh mục sản phẩm</h3>
+            <ul class="footer-links">
+                <li><a href="#">Phòng khách</a></li>
+                <li><a href="#">Phòng ngủ</a></li>
+                <li><a href="#">Phòng ăn</a></li>
+                <li><a href="#">Văn phòng</a></li>
+                <li><a href="#">Đồ trang trí</a></li>
+                <li><a href="#">Sản phẩm mới</a></li>
+            </ul>
+        </div>
+        <div class="footer-widget">
+            <h3>Thông tin liên hệ</h3>
+            <div class="contact-info">
+                <span>📍</span>
+                <p>123 Nguyễn Trãi, Quận 1, TP. Hồ Chí Minh</p>
+            </div>
+            <div class="contact-info">
+                <span>📞</span>
+                <p>0123 456 789</p>
+            </div>
+            <div class="contact-info">
+                <span>✉️</span>
+                <p>info@ohdecor.vn</p>
+            </div>
+            <div class="contact-info">
+                <span>🕒</span>
+                <p>Thứ 2 - Chủ nhật: 8:00 - 20:00</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>©
+</html>

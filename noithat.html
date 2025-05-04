@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OH Decor - Nội thất cao cấp</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #344943;
+            box-shadow: none;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .top-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            max-width: 150px;
+        }
+
+        .top-header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            padding: 8px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            width: 250px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .user-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .user-actions a {
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .user-actions i {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 15px 5%;
+        }
+
+        .main-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            justify-content: center;
+        }
+
+        .main-menu a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .main-menu a:hover {
+            color: #d4a762;
+        }
+
+        .main-menu a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #d4a762;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        .main-menu a:hover:after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 150px;
+            height: 600px;
+            background-color: #344943;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-content {
+            padding: 0 5%;
+            width: 50%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          
+        }
+
+        .hero h1 {
+            
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            background: url("z6457819474546_50d9fcf0f4098a5c9d95d6bf4408d8ef.jpg") center;
+            background-size:cover;
+            background-clip: text ;
+            color: transparent;
+            animation: animate 2s linear infinite;
+        }
+        @keyframes animate {
+            to{
+                background-position-x:-200px ;
+            }
+        }
+        .hero p {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: #d4a762;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #c99652;
+        }
+
+        /* Featured Categories */
+        .featured-categories {
+            padding: 60px 5%;
+            text-align: center;
+        }
+
+        .section-title {
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 70%;
+            height: 10px;
+            background: rgba(212, 167, 98, 0.2);
+            bottom: 5px;
+            left: 15%;
+            z-index: 1;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .category-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            height: 300px;
+        }
+
+        .category-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .category-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .category-item-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: #fff;
+            text-align: left;
+        }
+
+        .category-item-content h3 {
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        /* Featured Products */
+        .featured-products {
+            padding: 60px 5%;
+            background: #f9f9f9;
+            text-align: center;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .product-item {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+            position: relative;
+        }
+
+        .product-item:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .product-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .product-item img {
+            transition: scale 2s  
+        }
+        .product-item:hover img {
+            scale: 1.05;
+        }
+        .product-details {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .product-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .product-price {
+            font-size: 20px;
+            color: #d4a762;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .add-to-cart {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background: #d4a762;
+        }
+
+        .product-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #d4a762;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 5%;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-content h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .about-content h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: #d4a762;
+            bottom: 0;
+            left: 0;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 60px 5%;
+            background: #f1f1f1;
+            text-align: center;
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-item {
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .author-info h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .author-info span {
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            padding: 60px 5%;
+            background: #333;
+            color: #fff;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 16px;
+            color: #ddd;
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+        }
+
+        .newsletter-form button {
+            padding: 15px 25px;
+            background: #d4a762;
+            color: #fff;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background: #c99652;
+        }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: #fff;
+            padding: 60px 5% 30px;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-widget h3 {
+            font-size: 22px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-widget h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background: #d4a762;
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-widget p {
+            margin-bottom: 15px;
+            color: #bbb;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #d4a762;
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-info i {
+            width: 25px;
+            margin-right: 10px;
+            color: #d4a762;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: #333;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #d4a762;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+            color: #bbb;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .category-grid, .product-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .about-section {
+                flex-direction: column;
+            }
+
+            .footer-top {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .category-grid, .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero {
+                height: 500px;
+            }
+
+            .hero-content {
+                width: 90%;
+            }
+
+            .main-menu {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .category-grid, .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="top-header">
+            <div class="logo">
+            
+            </div>
+            <div class="top-header-right">
+                <div class="search-box">
+                    <input type="text" placeholder="Tìm kiếm sản phẩm...">
+                    <button class="search-btn">🔍</button>
+                </div>
+                <div class="user-actions">
+                    <a href="#">
+                        <span>👤</span>
+                        <span>Tài khoản</span>
+                    </a>
+                    <a href="#">
+                        <span>❤️</span>
+                        <span>Yêu thích</span>
+                    </a>
+                    <a href="#">
+                        <span>🛒</span>
+                        <span>Giỏ hàng (0)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <ul class="main-menu">
+                <li><a href="noithat.html">Trang chủ</a></li>
+                <li><a href="vechungtoi/phangioithieu.html">Về chúng tôi</a></li>
+                <li><a href="sanpham/sanpham.html">Sản phẩm</a></li>
+                <li><a href="phongkhach/phongkhach.html">Phòng khách</a></li>
+                <li><a href="phongngu/phongngu.html">Phòng ngủ</a></li>
+                <li><a href="phongan/phongan.html">Phòng ăn</a></li>
+                <li><a href="tintuc/tintuc.html">Tin tức</a></li>
+                <li><a href="lienhe/lienhe.html">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Không gian sống hoàn hảo cho ngôi nhà của bạn</h1>
+            <p>Khám phá bộ sưu tập nội thất cao cấp với thiết kế hiện đại và tinh tế. Biến không gian sống của bạn thành tác phẩm nghệ thuật.</p>
+            <a href="#" class="btn">Khám phá ngay</a>
+        </div>
+        <div class="container">
+            <img src="https://bizweb.dktcdn.net/100/501/740/themes/929449/assets/slider_text_image.png?1736415638335" alt="Nội thất nâng tầm không gian sống" class="floating-image" id="floatingElement">
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="featured-categories">
+        <div class="section-title">
+            <h2>Danh mục sản phẩm</h2>
+        </div>
+        <div class="category-grid">
+            <div class="category-item">
+                <img src="hien_dai/Sofa/bb2a937b-lazio-tl15-3-cho.1-800x500.jpg" alt="Phòng khách">
+                <div class="category-item-content">
+                    <h3>Phòng khách</h3>
+                    <a href="#" class="btn">Xem thêm</a>
+                </div>
+            </div>
+            <div class="category-item">
+                <img src="co_dien/Giuong_ngu/53_a8285ebe878446488852291a0fdaccc1_master.png" alt="Phòng ngủ">
+                <div class="category-item-content">
+                    <h3>Phòng ngủ</h3>
+                    <a href="#" class="btn">Xem thêm</a>
+                </div>
+            </div>
+            <div class="category-item">
+                <img src="hien_dai/ban_an/03-800x500.jpg" alt="Phòng ăn">
+                <div class="category-item-content">
+                    <h3>Phòng ăn</h3>
+                    <a href="#" class="btn">Xem thêm</a>
+                </div>
+            </div>
+            <div class="category-item">
+                <img src="don_gian/Ban_lam_viec_Ban_hoc/270_9dfc81ab6bf74d19b2aa4beb50b14b21_master.png" alt="Văn phòng">
+                <div class="category-item-content">
+                    <h3>Văn phòng</h3>
+                    <a href="#" class="btn">Xem thêm</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="section-title">
+            <h2>Sản phẩm nổi bật</h2>
+        </div>
+        <div class="product-grid">
+            <div class="product-item">
+                <span class="product-tag">Mới</span>
+                <img src="hien_dai/Sofa/1-800x500.png" alt="Ghế sofa">
+                <div class="product-details">
+                    <h3 class="product-title">Ghế sofa Scandinavian</h3>
+                    <div class="product-price">15.500.000₫</div>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="hien_dai/ban_an/03-13-800x500.jpg" alt="Bàn ăn">
+                <div class="product-details">
+                    <h3 class="product-title">Bàn ăn gỗ sồi tự nhiên</h3>
+                    <div class="product-price">12.800.000₫</div>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <span class="product-tag">-15%</span>
+                <img src="co_dien/Giuong_ngu/48_e2d4f5c97eba4ed9ab93843695169a7e_master.png" alt="Giường ngủ">
+                <div class="product-details">
+                    <h3 class="product-title">Giường ngủ bọc vải cao cấp</h3>
+                    <div class="product-price">18.900.000₫</div>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="co_dien/Den_tran_nha/anh.jpg" alt="Đèn trần">
+                <div class="product-details">
+                    <h3 class="product-title">Đèn trần hiện đại</h3>
+                    <div class="product-price">5.600.000₫</div>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="hien_dai/ke_sach/DUNDEE.1-600x360.jpg" alt="Tủ kệ">
+                <div class="product-details">
+                    <h3 class="product-title">Tủ kệ trang trí đa năng</h3>
+                    <div class="product-price">8.200.000₫</div>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <span class="product-tag">Hot</span>
+                <img src="hien_dai/Ghế/JD7561-2.2-1-600x360.jpg" alt="Ghế thư giãn">
+                <div class="product-details">
+                    <h3 class="product-title">Ghế thư giãn bọc da</h3>
+                    <div class="product-price">11.900.000₫</div>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="don_gian/Ban_lam_viec_Ban_hoc/260_bce484431e784e42b7e9fb500c24ccae_master.png" alt="Bàn làm việc">
+                <div class="product-details">
+                    <h3 class="product-title">Bàn làm việc gỗ tự nhiên</h3>
+                    <div class="product-price">7.800.000₫</div>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="hien_dai/ke_tv/01-34-600x360.jpg" alt="Kệ tivi">
+                <div class="product-details">
+                    <h3 class="product-title">Kệ tivi thiết kế hiện đại</h3>
+                    <div class="product-price">9.300.000₫</div>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <style>
+        .collection-products {
+            padding: 60px 5%;
+            background: #f9f9f9;
+            text-align: center;
+            
+        }
+
+        .button-group-filter {
+            margin-bottom: 40px;
+        }
+
+        .button-group-filter button {
+            background: #ffffff;
+            border: 1px solid #000000;
+            padding: 10px 20px;
+            border-radius: 18px;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: background 0.3s;
+        }
+
+        .button-group-filter button:hover {
+            background: #c99652;
+        }
+
+        .collection-products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .collection-products-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+            position: relative;
+
+            height: 100%;
+
+        }
+
+        .collection-products-item:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .collection-products-item img {
+            max-width: 100%;
+            max-height: 100%;
+           margin-top: auto;
+            object-fit: cover;
+            transition: scale 1.5s;
+        }
+
+        .collection-products-item:hover img {
+            scale: 1.05;
+            
+        }
+
+        .collection-products-details {
+            width: 100% ;
+            margin-top: auto;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .collection-products-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .collection-products-price {
+            font-size: 20px;
+            color: #d4a762;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+    </style>
+    <section class="collection-products">
+        <div class="section-title">
+            <h2>Bộ sưu tập</h2>
+        </div>
+        <div class="button-group-filter">
+            <button class="hien_dai" style="background: #c99652;" onclick="click_collection(this)">Hiện đại</button>
+            <button class="co_dien" onclick="click_collection(this)">Cổ điển</button>
+            <button class="don_gian"onclick="click_collection(this)">Đơn giản</button>
+        </div>
+        <div class="collection-products-grid" id="hien_dai">
+            <div class="collection-products-item">
+                <span class="collection-products-tag">Mới</span>
+                <img src="hien_dai/tu_quan_ao/11_a514edd7b21746c4ba5b5fe71811d4a4_master.png" alt="Ghế sofa">
+                <div class="collection-products-details">
+                    <h3 class="collection-products-title">Tủ quần áo Carlotta</h3>
+                    <div class="collection-products-price">1.000.000.000₫</div>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+
+            <div class="collection-products-item">
+                <span class="collection-products-tag">Mới</span>
+                <img src="hien_dai/den_trang_tri/1-5fd67d62-06e6-4398-a5f4-9ae167e37dc6.jpg" alt="Ghế sofa">
+                <div class="collection-products-details">
+                    <h3 class="collection-products-title">Đèn trang trí left heat</h3>
+                    <div class="collection-products-price">5.500.000₫</div>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+
+            <div class="collection-products-item">
+                <span class="collection-products-tag">Mới</span>
+                <img src="hien_dai\ban_lam_viec\BLV019.001M2-1.1-600x360.jpg" alt="Ghế sofa">
+                <div class="collection-products-details">
+                    <h3 class="collection-products-title">Đèn trang trí left heat</h3>
+                    <div class="collection-products-price">5.500.000₫</div>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+
+            <div class="collection-products-item">
+                <span class="collection-products-tag">Mới</span>
+                <img src="hien_dai\den_tran_nha\den_5x768x768x4.jpg" alt="Ghế sofa">
+                <div class="collection-products-details">
+                    <h3 class="collection-products-title">Đèn chùm Spider</h3>
+                    <div class="collection-products-price">5.500.000₫</div>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="collection-products-grid" id="co_dien" style="display: none;">
+            <div class="collection-products-item">
+                <span class="collection-products-tag">Mới</span>
+                <img src="co_dien/Ghe/2-a5fa2695-aa60-4b67-9381-9143e895d34d.jpg" alt="Ghế">
+                <div class="collection-products-details">
+                    <h3 class="collection-products-title">Ghế</h3>
+                    <div class="collection-products-price">1.000.000.000₫</div>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+
+            <div class="collection-products-item">
+                <span class="collection-products-tag">Mới</span>
+                <img src="co_dien/Giuong_ngu/46_6c5f60d57a434a65838c6fb32cdd8a2b_master.png" alt="Ghế sofa">
+                <div class="collection-products-details">
+                    <h3 class="collection-products-title">Giường ngủ</h3>
+                    <div class="collection-products-price">5.500.000₫</div>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+
+            <div class="collection-products-item">
+                <span class="collection-products-tag">Mới</span>
+                <img src="co_dien/Tu_quan_ao/wr098__2__cfb408bb76de48af86f58e6c0fc3cb72_large.jpg" alt="Ghế sofa">
+                <div class="collection-products-details">
+                    <h3 class="collection-products-title">tủ quần áo</h3>
+                    <div class="collection-products-price">5.500.000₫</div>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+
+            <div class="collection-products-item">
+                <span class="collection-products-tag">Mới</span>
+                <img src="co_dien/Ke_tivi/cb235b_2a5ea80906a847b3b61d4e2fa58b2b52_large.jpg" alt="Ghế sofa">
+                <div class="collection-products-details">
+                    <h3 class="collection-products-title>kệ tivi</h3>
+                    <div class="collection-products-price"> 5.500.000₫</div>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+        </div>
+            
+        <div class="collection-products-grid" id="don_gian" style="display: none;">
+            <div class="collection-products-item">
+                <span class="collection-products-tag">Mới</span>
+                <img src="don_gian/Ban_an/13_1cc6739c6d8d46b687e0c3e50eacc6ba_master.png" alt="Ghế">
+                <div class="collection-products-details">
+                    <h3 class="collection-products-title">bàn ăn</h3>
+                    <div class="collection-products-price">1.000.000.000₫</div>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+
+            <div class="collection-products-item">
+                <span class="collection-products-tag">Mới</span>
+                <img src="don_gian/Ghe_don/17_2b68f5d2cf794eab98f5ff7f4de68648_master.png" alt="Ghế sofa">
+                <div class="collection-products-details">
+                    <h3 class="collection-products-title">ghế đơn</h3>
+                    <div class="collection-products-price">5.500.000₫</div>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+
+            <div class="collection-products-item">
+                <span class="collection-products-tag">Mới</span>
+                <img src="don_gian/Sofa/285_90187ffa592745e691da86f6efef4575_master.png" alt="Ghế sofa">
+                <div class="collection-products-details">
+                    <h3 class="collection-products-title">sova</h3>
+                    <div class="collection-products-price">5.500.000₫</div>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+
+            <div class="collection-products-item">
+                <span class="collection-products-tag">Mới</span>
+                <img src="don_gian/Tu_quan_ao/17_97bfb64d6391492ea3bc4870fac4240b_master.png" alt="Ghế sofa">
+                <div class="collection-products-details">
+                    <h3 class="collection-products-title">reyna</h3>
+                    <div class="collection-products-price">5.500.000₫</div>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+            </div>
+
+            
+           
+           
+        </div>
+    </section>
+
+
+    <script>
+        function click_collection(element) {
+            const buttonClass = element.className;
+            
+            const allButtons = document.querySelectorAll('.button-group-filter button');
+            allButtons.forEach(button => {
+                button.style.background = "#ffffff";
+            });
+            element.style.background = "#c99652";
+            if (buttonClass === "hien_dai") {
+                document.getElementById("hien_dai").style.display = "grid";
+                document.getElementById("co_dien").style.display = "none";
+                document.getElementById("don_gian").style.display = "none";
+            }
+            else if (buttonClass === "co_dien") {
+                document.getElementById("hien_dai").style.display = "none";
+                document.getElementById("co_dien").style.display = "grid";
+                document.getElementById("don_gian").style.display = "none";
+            }else if (buttonClass === "don_gian") {
+                document.getElementById("hien_dai").style.display = "none";
+                document.getElementById("co_dien").style.display = "none";
+                document.getElementById("don_gian").style.display = "grid";
+            }
+            
+           
+        }
+        
+
+    
+    </script>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="about-image">
+            <img src="z6457907941434_02fb0dcb6da86145826fcbbe884bf4d8.jpg" alt="Về OH Decor">
+        </div>
+        <div class="about-content">
+            <h2>Về OH Decor</h2>
+            <p>OH Decor tự hào là thương hiệu nội thất cao cấp hàng đầu tại Việt Nam với hơn 10 năm kinh nghiệm. Chúng tôi chuyên cung cấp các sản phẩm nội thất với thiết kế độc đáo, tinh tế và chất lượng vượt trội.</p>
+            <p>Với đội ngũ thiết kế giàu kinh nghiệm và đam mê, OH Decor luôn nỗ lực mang đến những không gian sống hoàn hảo, kết hợp giữa tính thẩm mỹ và công năng, đáp ứng mọi nhu cầu của khách hàng.</p>
+            <p>Sứ mệnh của chúng tôi là biến mỗi ngôi nhà thành tổ ấm đẳng cấp và sang trọng, nơi mỗi món đồ nội thất không chỉ là vật dụng mà còn là tác phẩm nghệ thuật.</p>
+            <a href="#" class="btn">Tìm hiểu thêm</a>
+        </div>
+    </section>
+
+ 
+    
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <h2>Đăng ký nhận thông tin</h2>
+        <p>Đăng ký nhận thông tin về sản phẩm mới, khuyến mãi và những ý tưởng trang trí nội thất hấp dẫn.</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Nhập địa chỉ email của bạn">
+            <button type="submit">Đăng ký</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-widget">
+                <h3>Về OH Decor</h3>
+                <p>OH Decor - Thương hiệu nội thất cao cấp hàng đầu với thiết kế độc đáo, chất lượng vượt trội, mang đến không gian sống hoàn hảo cho mọi gia đình.</p>
+                <div class="social-links">
+                    <a href="#">F</a>
+                    <a href="#">I</a>
+                    <a href="#">Y</a>
+                    <a href="#">P</a>
+                </div>
+            </div>
+            <div class="footer-widget">
+                <h3>Liên kết nhanh</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="#">Về chúng tôi</a></li>
+                    <li><a href="#">Sản phẩm</a></li>
+                    <li><a href="#">Tin tức</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                </ul>
+            </div>
+            <div class="footer-widget">
+                <h3>Danh mục sản phẩm</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Phòng khách</a></li>
+                    <li><a href="#">Phòng ngủ</a></li>
+                    <li><a href="#">Phòng ăn</a></li>
+                    <li><a href="#">Văn phòng</a></li>
+                    <li><a href="#">Đồ trang trí</a></li>
+                    <li><a href="#">Sản phẩm mới</a></li>
+                </ul>
+            </div>
+            <div class="footer-widget">
+                <h3>Thông tin liên hệ</h3>
+                <div class="contact-info">
+                    <span>📍</span>
+                    <p>123 Nguyễn Trãi, Quận 1, TP. Hồ Chí Minh</p>
+                </div>
+                <div class="contact-info">
+                    <span>📞</span>
+                    <p>0123 456 789</p>
+                </div>
+                <div class="contact-info">
+                    <span>✉️</span>
+                    <p>info@ohdecor.vn</p>
+                </div>
+                <div class="contact-info">
+                    <span>🕒</span>
+                    <p>Thứ 2 - Chủ nhật: 8:00 - 20:00</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>©
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const floatingElement = document.getElementById('floatingElement');
+                        // Các tham số cho hiệu ứng nổi
+                        let startPosition = 0;        // Vị trí bắt đầu
+                        let floatRange = 15;          // Biên độ dao động lên xuống (px)
+                        let floatSpeed = 0.015;        // Tốc độ dao động (số nhỏ hơn = chậm hơn)
+                        let time = 0;                 // Biến thời gian để tạo hiệu ứng sin wave
+                        // Hàm tạo hiệu ứng nổi lên xuống
+                        function floatAnimation() {
+                            // Tăng biến thời gian
+                            time += floatSpeed;
+                            // Tính toán vị trí mới dựa trên hàm sin để tạo chuyển động mượt mà lên xuống
+                            // Math.sin() tạo ra giá trị từ -1 đến 1, nhân với floatRange để có biên độ dao động
+                            let newPosition = startPosition + Math.sin(time) * floatRange;
+                            // Áp dụng vị trí mới cho phần tử
+                            floatingElement.style.transform = `translateY(${newPosition}px)`;
+                            // Tiếp tục animation
+                            requestAnimationFrame(floatAnimation);
+                        }
+                        
+                        // Bắt đầu hiệu ứng nổi
+                        floatAnimation();
+                    });
+                </script>
+
+
